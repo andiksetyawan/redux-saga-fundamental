@@ -4,7 +4,7 @@ import { put, takeEvery, all } from "redux-saga/effects";
 const delay = ms => new Promise(res => setTimeout(res, ms));
 
 // Our worker Saga: will perform the async increment task
-export function* incrementAsync() {
+function* incrementAsync() {
   //if call api
   // try {
   //   const user = yield call(Api.fetchUser, action.payload.userId);
@@ -16,7 +16,7 @@ export function* incrementAsync() {
   yield put({ type: "INCREMENT" });
 }
 
-export function* decrementAsync() {
+function* decrementAsync() {
   yield delay(1000);
   yield put({ type: "DECREMENT" });
 }
