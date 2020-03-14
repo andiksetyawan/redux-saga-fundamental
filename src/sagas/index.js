@@ -13,12 +13,12 @@ function* incrementAsync() {
   //   yield put({ type: "USER_FETCH_FAILED", message: e.message });
   // }
   yield delay(1000);
-  yield put({ type: "INCREMENT" });
+  yield put({ type: "INCREMENT", payload: { data: "inc.payload" } });
 }
 
 function* decrementAsync() {
   yield delay(1000);
-  yield put({ type: "DECREMENT" });
+  yield put({ type: "DECREMENT", payload: { data: "dec.payload" } });
 }
 
 // Our watcher Saga: spawn a new incrementAsync task on each INCREMENT_ASYNC

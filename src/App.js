@@ -4,6 +4,13 @@ import "./App.css";
 
 import { connect } from "react-redux";
 
+import {
+  increment,
+  decrement,
+  incrementAsync,
+  decrementAsync
+} from "./actions/counter";
+
 class App extends React.Component {
   render() {
     return (
@@ -24,10 +31,10 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  inc: () => dispatch({ type: "INCREMENT" }),
-  dec: () => dispatch({ type: "DECREMENT" }),
-  incAsync: () => dispatch({ type: "INCREMENT_ASYNC" }),
-  decAsync: () => dispatch({ type: "DECREMENT_ASYNC" })
+  inc: () => dispatch(increment()),
+  dec: () => dispatch(decrement()),
+  incAsync: () => dispatch(incrementAsync()),
+  decAsync: () => dispatch(decrementAsync())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
