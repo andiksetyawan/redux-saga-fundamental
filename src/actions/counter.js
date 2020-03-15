@@ -12,12 +12,14 @@ export const decrement = () => {
 
 export const incrementAsync = () => {
   return {
-    type: "INCREMENT_ASYNC"
+    type: "INCREMENT_ASYNC",
+    payload: { data: "inc.payload" }
   };
 };
 
 export const decrementAsync = () => {
   return {
-    type: "DECREMENT_ASYNC"
+    type: "DECREMENT_ASYNC",
+    payload: { data: "inc.payload" }
   };
 };

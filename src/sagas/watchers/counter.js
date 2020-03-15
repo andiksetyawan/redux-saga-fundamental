@@ -1,4 +1,5 @@
 import { put, takeEvery, all } from "redux-saga/effects";
+import { increment, decrement } from "../../actions/counter";
 
 // ...
 const delay = ms => new Promise(res => setTimeout(res, ms));
@@ -13,12 +14,13 @@ function* incrementAsync() {
   //   yield put({ type: "USER_FETCH_FAILED", message: e.message });
   // }
   yield delay(1000);
-  yield put({ type: "INCREMENT", payload: { data: "inc.payload" } });
+  yield put(increment());
 }
 
 function* decrementAsync() {
   yield delay(1000);
-  yield put({ type: "DECREMENT", payload: { data: "dec.payload" } });
+  console.log("decrement", decrement);
+  yield put(decrement());
 }
 
 // Our watcher Saga: spawn a new incrementAsync task on each INCREMENT_ASYNC
